@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1792218449180,
+      "tag": "0000_superb_darkstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1792218483211,
+      "tag": "0001_minor_bromley",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792219141210,
+      "tag": "0002_puzzling_morlun",
+      "breakpoints": true
+    }
+  ]
+}

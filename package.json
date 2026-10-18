@@ -1,0 +1,63 @@
+{
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.10",
+    "better-auth": "1.7.10",
+    "dotenv": "18.0.8",
+    "drizzle-orm": "0.45.4",
+    "lucide-react": "1.59.0",
+    "next": "16.4.2",
+    "nodemailer": "10.1.2",
+    "pg": "8.23.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-hook-form": "7.90.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.5",
+    "@types/nodemailer": "8.0.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "drizzle-kit": "0.31.11",
+    "prettier": "3.9.10",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.5",
+    "esbuild": "0.28.2"
+  },
+  "name": "clearframe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Assessment information and professional review, with explicit clinical boundaries.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "node scripts/start.mjs",
+    "setup:demo": "node --import tsx scripts/setup-demo.ts",
+    "demo": "npm run setup:demo && npm run dev",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --import tsx scripts/migrate.ts",
+    "db:seed": "node --import tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build",
+    "user:create": "node --import tsx scripts/create-user.ts",
+    "db:init": "node --import tsx scripts/init-registry.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "type": "module",
+  "overrides": {
+    "esbuild": "$esbuild"
+  }
+}

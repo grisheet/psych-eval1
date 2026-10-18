@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: clearframe
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a local database password}
+      POSTGRES_DB: clearframe
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - clearframe-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U clearframe']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  clearframe-postgres:
